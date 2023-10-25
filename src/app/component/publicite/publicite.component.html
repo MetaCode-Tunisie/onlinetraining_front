@@ -1,0 +1,76 @@
+<br>
+<br>
+<div class="container">
+
+
+  <form (ngSubmit)="filter(Sponsor, MaxBudget, MinBudget)" class="single-row-form">
+    <div class="form-group">
+      <label for="sponsor">Sponsor name:</label>
+      <input type="text" id="sponsor" [(ngModel)]="Sponsor" name="sponsor" class="form-control">
+    </div>
+    <div class="form-group">
+      <label for="maxBudget">Max Budget:</label>
+      <input type="number" id="maxBudget" [(ngModel)]="MaxBudget" name="maxBudget" class="form-control">
+    </div>
+    <div class="form-group">
+      <label for="minBudget">Min Budget:</label>
+      <input type="number" id="minBudget" [(ngModel)]="MinBudget" name="minBudget" class="form-control">
+    </div>
+    <button type="submit" class="btn btn-primary">Filtrer</button>
+  </form>
+  </div>
+  <br>
+<br>
+<div class="container">
+    <div class="row">
+       
+      <div class="col-4" *ngFor="let pub of Listpublicite; let i = index">
+        
+
+
+
+
+
+
+
+              <div class="team-item bg-light">
+                <div class="overflow-hidden">
+                    <img class="img-fluid" src="data:image/jpeg;base64,{{pub.image}}" alt="">
+                </div>
+              
+                <div class="text-center p-4">
+                    <h5 class="mb-0">{{pub.description}}</h5>
+                    
+                   
+                  <div class="button-container">
+                        <button  (click)="deletepublicite(pub.idPublicite)">Supprimer</button>
+                        <button  routerLink="/updatepublicite/{{pub.idPublicite}}" data-toggle="tooltip">Modefier</button>
+                  </div>
+        
+                </div>
+            </div>
+        
+
+            <br>
+            <br>
+
+
+
+
+
+
+
+
+
+
+
+
+                <!-- Add a new row after every third element -->
+            <div *ngIf="(i + 1) % 3 === 0" class="w-100"></div>
+      </div>
+    </div>
+  </div>
+
+
+
+

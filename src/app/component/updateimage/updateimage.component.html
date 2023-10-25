@@ -1,0 +1,13 @@
+<form style="margin-top: 130px;"  (ngSubmit)="Image()" #ImageForm="ngForm">
+    <div>
+        <label for="image">Image:</label>
+        <input type="file" id="image" (change)="onFileSelected($event)" #image="ngModel" name="image" ngModel required>
+        <div *ngIf="image.invalid && (image.dirty || image.touched)">
+          <span *ngIf="ImageForm.controls['image'].errors?.['required']">Ce champ est requis.</span>
+        </div>
+      </div>
+  
+    <button [disabled]="ImageForm.invalid" type="submit">Update Product Image</button>
+  </form>
+
+   
