@@ -1,0 +1,27 @@
+<!-- event.component.html -->
+
+<div *ngIf="successMessage" class="alert alert-success">
+  {{ successMessage }}
+</div>
+<div class="row">
+    <div class="col-md-12">
+      <div class="card">
+        <div class="event-list">
+          <div *ngFor='let event of events1' class="event-item">
+            <img [src]="'http://localhost:8082/back/Center/Event/events/' + event.idEvents + '/image'" alt="Event Image">
+            <div class="event-details">
+              <h4>{{ event.name }}</h4>
+              <p>{{ event.description }}</p>
+              <p><strong>Start Date:</strong> {{ event.startDate }}</p>
+              <p><strong>End Date:</strong> {{ event.endDate }}</p>
+              <p><strong>Location:</strong> {{ event.location }}</p>
+              <p><strong>Theme:</strong> {{ event.theme }}</p>
+              <p><strong>Places:</strong> {{ event.places }}</p>
+            </div>
+            <button class="btn btn-danger" (click)="participateInEvent(event.idEvents)">Participate</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  

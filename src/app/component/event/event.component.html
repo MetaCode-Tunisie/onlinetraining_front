@@ -1,0 +1,44 @@
+<div>
+  <!-- Add this input field for searching -->
+  <input type="text" placeholder="Search events by name" [(ngModel)]="searchTerm" (input)="onSearch()">
+</div>
+
+<div class="row">
+  <div class="col-md-12">
+    <div class="card text-center">
+      <table class="table">
+        <thead style="background-color: rgb(192, 183, 183);">
+          <th>Name</th>
+          <th>Description</th>
+          <th>StartDate</th>
+          <th>EndDate</th>
+          <th>Location</th>
+          <th>theme</th>
+          <th>Places</th>
+          <th>Image</th>
+          <th>Action</th>
+        </thead>
+        <tbody>
+          <tr *ngFor='let event of events'>
+            <ng-container *ngIf="searchTerm === '' || event.name.toLowerCase().includes(searchTerm.toLowerCase())">
+              <td>{{ event.name }}</td>
+              <td>{{ event.description }}</td>
+              <td>{{ event.startDate }}</td>
+              <td>{{ event.endDate }}</td>
+              <td>{{ event.location }}</td>
+              <td>{{ event.theme }}</td>
+              <td>{{ event.places }}</td>
+              <td>
+                <img [src]="'http://localhost:8082/back/Center/Event/events/' + event.idEvents + '/image'"
+                  alt="Event Image" width="100" height="100">
+              </td>
+              <td>
+                <button type="button" class="btn btn-outline-danger" (click)="deleteEvent(event.idEvents)">Delete</button>
+              </td>
+            </ng-container>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
