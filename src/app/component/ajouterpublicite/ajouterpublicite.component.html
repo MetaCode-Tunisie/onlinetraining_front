@@ -1,0 +1,70 @@
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <div class="container">
+ 
+    <form (ngSubmit)="onSubmit()" #forumForm="ngForm" class="form">
+      <div class="flex-column">
+        <label>Description </label></div>
+        <div class="inputForm">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24">
+            <path d="M13 4H5c-1.104 0-2 .896-2 2v12c0 1.104.896 2 2 2h14c1.104 0 2-.896 2-2v-8c0-1.104-.896-2-2-2zm-1 12h-6v-2h6zm0-4h-6v-2h6zm0-4h-6V6h6zm8 10h-4v-2h4zm0-4h-4v-2h4zm0-4h-4V6h4z"/>
+          </svg>
+          
+          <textarea #description="ngModel" id="description" ngModel name="description" [(ngModel)]="publicite.description"  class="input" placeholder="Enter your Description"></textarea>
+          <div *ngIf="description.invalid && (description.dirty || description.touched)">
+            <span *ngIf="forumForm.controls['description'].errors?.['required']">Ce champ est requis.</span>
+          </div>
+        </div>
+
+
+
+      
+      <div class="flex-column">
+        <label>Prix </label></div>
+        <div class="inputForm">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24">
+            <circle cx="12" cy="12" r="11" stroke="#000" stroke-width="2" fill="none" />
+            <text x="50%" y="50%" text-anchor="middle" dy="0.3em" font-size="16" fill="#000">$</text>
+          </svg>
+          
+          
+          
+          
+          
+          <input type="text" #prix="ngModel" id="prix" name="prix" ngModel [(ngModel)]="publicite.prix" class="input" placeholder="Enter your Price">
+          <div *ngIf="prix.invalid && (prix.dirty || prix.touched)">
+            <span *ngIf="forumForm.controls['prix'].errors?.['required']">Ce champ est requis.</span>
+          </div>
+        
+        </div>
+      
+        <div class="grid w-full max-w-xs items-center gap-1.5">
+          <label class="text-sm text-gray-400 font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70">Image</label>
+          <input id="image" (change)="onFileSelected($event)" #image="ngModel" name="image" ngModel  type="file" class="flex h-10 w-full rounded-md border border-input bg-white px-3 py-2 text-sm text-gray-400 file:border-0 file:bg-transparent file:text-gray-600 file:text-sm file:font-medium">
+          <div *ngIf="image.invalid && (image.dirty || image.touched)">
+            <span *ngIf="forumForm.controls['image'].errors?.['required']">Ce champ est requis.</span>
+          </div>
+        </div>
+        <button [disabled]="forumForm.invalid" type="submit" class="button-submit">Create Publicite</button>
+      
+  
+  
+      </form>
+    </div>

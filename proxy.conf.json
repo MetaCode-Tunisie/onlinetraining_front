@@ -1,0 +1,26 @@
+{
+    "/EXAM-SERVICE/*": {
+      "target": "http://localhost:9999",
+      "secure": false
+    },
+    "/FORUM-SERVICE/*": {
+      "target": "http://localhost:9999",
+      "secure": false
+  },
+    "/FORMATION-SERVICE/*": {
+      "target": "http://localhost:9999",
+      "secure": false
+  },
+    "/KHALIL/*": {
+      "target": "http://localhost:9999",
+      "secure": false
+  },
+    "/EVENT-SERVICE/*": {
+      "target": "http://localhost:9999",
+      "secure": false
+  }
+
+
+  }
+
+

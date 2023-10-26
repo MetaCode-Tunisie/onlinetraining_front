@@ -1,0 +1,27 @@
+<form style="margin-top: 130px;" (ngSubmit)="updatepublicite()" #forumForm="ngForm">
+   
+    <div>
+        <label for="description">Description:</label>
+        <textarea #description="ngModel" id="description" ngModel name="description" [(ngModel)]="publicite.description" required></textarea>
+        <div *ngIf="description.invalid && (description.dirty || description.touched)">
+          <span *ngIf="forumForm.controls['description'].errors?.['required']">Ce champ est requis.</span>
+        </div>
+      </div>
+
+
+    <div>
+      <label for="prix">Prix :</label>
+      <input type="text" #prix="ngModel" id="prix" name="prix" ngModel [(ngModel)]="publicite.prix" required>
+      <div *ngIf="prix.invalid && (prix.dirty || prix.touched)">
+        <span *ngIf="forumForm.controls['prix'].errors?.['required']">Ce champ est requis.</span>
+      </div>
+    </div>
+
+  
+ 
+  
+
+   
+
+    <button [disabled]="forumForm.invalid" type="submit">update Publicite</button>
+  </form>

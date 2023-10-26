@@ -1,0 +1,64 @@
+/* event.component.css */
+
+.event-list {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+  
+  .event-item {
+    display: flex;
+    gap: 20px;
+    padding: 20px;
+    border: 1px solid #e0e0e0;
+    border-radius: 5px;
+  }
+  
+  .event-details {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  h4 {
+    font-size: 24px;
+    margin: 0;
+  }
+  
+  p {
+    margin: 5px 0;
+  }
+  
+  img {
+    width: 250px; /* Largeur souhaitée */
+    height: 250px; /* Hauteur souhaitée */
+    max-width: 150%; /* Assurez-vous que l'image reste dans la largeur du conteneur */
+    max-height: 150%; /* Assurez-vous que l'image reste dans la hauteur du conteneur */
+}
+
+  
+  .btn-danger {
+    background-color: #35dcd4;
+    color: #fff;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    padding: 8px 16px; /* Ajustez les valeurs de marge pour réduire la hauteur du bouton */
+
+  }
+  
+  .btn-danger:hover {
+    background-color: #23c8bd;
+  }
+  
+  .card {
+    background-color: #fff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+  }
+  
+  .row {
+    margin: 0;
+  }
+  

@@ -1,0 +1,40 @@
+<div class="container">
+ 
+
+  
+
+
+
+
+
+  <form (ngSubmit)="ajoutersponsor(sponsor)" class="form">
+    <div class="flex-column">
+      <label>Nom du sponsor </label></div>
+      <div class="inputForm">
+        <svg height="20" viewBox="0 0 32 32" width="20" xmlns="http://www.w3.org/2000/svg">
+          <g id="Layer_3" data-name="Layer 3">
+            <path d="M16 6A6 6 0 1 0 22 12A6 6 0 0 0 16 6M16 16c-3.313 0-6 2.687-6 6c0 1.274.392 2.471 1.118 3.475a11.992 11.992 0 0 1-2.105 3.42a2.999 2.999 0 1 0 4.974 0a12.035 12.035 0 0 1-2.105-3.42c.727-1.004 1.118-2.201 1.118-3.475C22 18.687 19.313 16 16 16M16 2a10 10 0 0 0-6.86 16.978A15.12 15.12 0 0 0 8 26c0 2.21.896 4.211 2.34 5.66A2 2 0 0 0 10 32h12a2 2 0 0 0 1.66-.34A15.12 15.12 0 0 0 24 26c0-2.21-.896-4.211-2.34-5.66A10 10 0 0 0 16 2z"/>
+          </g>
+        </svg>
+        
+
+        <input type="text" id="Sname" [(ngModel)]="sponsor.sname" name="Sname" class="input" placeholder="Enter your Name">
+      </div>
+    
+    <div class="flex-column">
+      <label>Lieu </label></div>
+      <div class="inputForm">
+        <svg height="20" viewBox="-64 0 512 512" width="20" xmlns="http://www.w3.org/2000/svg">
+          <path d="M336 512H48c-26.453125 0-48-21.523438-48-48V240L144 112h176L464 240v224c0 26.476562-21.546875 48-48 48zm-224-288c-8.832031 0-16-7.167969-16-16v-80c0-26.457031 21.542969-48 48-48s48 21.542969 48 48v80c0 8.832031-7.167969 16-16 16h-64zm112 144H128v-128h96zm0 0"/>
+        </svg>
+        
+        <input type="text" id="Lieu" [(ngModel)]="sponsor.lieu" name="Lieu" class="input" placeholder="Enter your Adresse">
+         </div>
+    
+    
+    <button type="submit" class="button-submit">Ajouter</button>
+    
+
+
+    </form>
+  </div>

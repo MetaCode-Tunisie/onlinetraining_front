@@ -1,0 +1,65 @@
+<div class="container-xxl py-5">
+    <div class="container">
+      <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
+        <h6 class="section-title bg-white text-center text-primary px-3">Forums</h6>
+        <h1 class="mb-5">Popular Forums</h1>
+      </div>
+      <div class="row g-4 justify-content-center">
+        <div class="col-lg-6 col-md-6 wow fadeInUp" data-wow-delay="0.1s" *ngFor="let forum of forums">
+
+
+          <div class="card"> 
+            <button class="dismiss" type="button" (click)="deleteForum(forum.id)">×</button> 
+            <div class="header"> 
+              <div class="image">
+                
+                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M20 7L9.00004 18L3.99994 13" stroke="#000000" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path> </g></svg>
+              
+              </div> 
+                <div class="content">
+                   <span class="title">{{ forum.title }}</span> 
+                   <p class="message">{{ forum.description }}</p> 
+                   </div> 
+                   <div class="actions">
+                      <button class="history" type="button"  href="" [routerLink]="['/posts', forum.id]">Read More</button> 
+                      <button class="track" type="button" (click)="toggleAddPostSection(forum.id)">Add Post</button> 
+                      <div *ngIf="forum.id === selectedForumId">
+                        <input type="file" (change)="onImageSelected($event)" />
+                        <button class="history" (click)="addPost()">Ajouter Post</button>
+                      </div>
+                      </div> 
+                      </div> 
+                      </div>
+
+
+
+
+
+          <div class="course-item bg-light">
+            
+            <div class="text-center p-4 pb-0">
+              
+              <div class="button-container">
+                
+               
+            
+              </div>
+            </div>
+          </div>
+        </div>
+        <button class="history" href="javascript:void(0)"  (click)="toggleAddSection()">Add new Forum</button>
+
+        <div *ngIf="showAddSection">
+          <h3>Add forum</h3>
+          <form (submit)="addForum(forum)">
+            <input type="text" [(ngModel)]="forum.description" name="description" placeholder="Description">
+            <input type="text" [(ngModel)]="forum.title" name="title" placeholder="Titre">
+            <button type="submit">Add forum</button>
+          </form>
+        </div>
+
+
+       
+      </div>
+    </div>
+  </div>

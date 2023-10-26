@@ -1,0 +1,62 @@
+
+
+
+<br>
+<br>
+<div class="container">
+  <button (click)="troisPremiersSponsors()">LES 3 Milleur sponsor</button>
+</div>
+<br>
+<br>
+
+<div class="container">
+  <div class="row">
+
+    <div class="col-md-4" *ngFor="let sponsor of Listsponsor; let i = index">
+      <div class="team-item bg-light">
+        <div class="overflow-hidden">
+          <img class="img-fluid" src="assets/img/sponsor.jpg" alt="">
+        </div>
+
+        <div class="text-center p-4">
+          <h5 class="mb-0">{{sponsor.sname}}</h5>
+          <small>{{sponsor.lieu}}</small>
+          <br>
+          <br>
+          <div class="button-container">
+            <button class="button-container" routerLink="/updatesponsor/{{sponsor.idSponsor}}" data-toggle="tooltip">Modefier</button>
+
+            <button (click)="deleteSponsor(sponsor.idSponsor)">Supprimer</button>
+          </div>
+
+        </div>
+      </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      <div *ngIf="(i + 1) % 3 === 0" class="w-100 d-md-none d-lg-none d-xl-none"></div>
+      <br>
+
+
+      <br>
+      <br>
+
+    </div>
+  </div>
+</div>
+<br>
+<br>

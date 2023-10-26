@@ -1,0 +1,17 @@
+
+<div class="container">
+    <br>
+    <br>
+<form (ngSubmit)="updatesponsor()">
+    <div class="form-group">
+      <label for="Sname">Sponsor name:</label>
+      <input type="text" id="Sname" [(ngModel)]="sponsor.sname" name="Sname" class="form-control">
+    </div>
+    <div class="form-group">
+      <label for="Lieu">Lieu:</label>
+      <input type="text" id="Lieu" [(ngModel)]="sponsor.lieu" name="Lieu" class="form-control">
+    </div>
+    <button type="submit" class="btn btn-primary">Mettre à jour</button>
+  </form>
+</div>
+  

@@ -1,0 +1,77 @@
+<div>
+  <h2>Add Event</h2>
+  <form [formGroup]="eventForm" (ngSubmit)="onSubmit()">
+    <div>
+      <label for="Name">Name:</label>
+      <input type="text" id="Name" formControlName="name" required>
+      <div *ngIf="eventForm?.get('name')?.hasError('required') && eventForm?.get('name')?.touched">
+        <p class="error-message" >Name is required.</p>
+      </div>
+    </div>
+
+    <div>
+      <label for="Description">Description:</label>
+      <input type="text" id="Description" formControlName="description" required>
+      <div *ngIf="eventForm?.get('description')?.hasError('required') && eventForm?.get('description')?.touched">
+        <p class="error-message">Description is required.</p>
+      </div>
+    </div>
+
+    <div>
+      <label for="StartDate">Start Date:</label>
+      <input type="date" id="StartDate" formControlName="startDate" required>
+      <div *ngIf="eventForm?.get('startDate')?.hasError('required') && eventForm?.get('startDate')?.touched">
+        <p class="error-message">Start Date is required.</p>
+      </div>
+    </div>
+
+    <div>
+      <label for="EndDate">End Date:</label>
+      <input type="date" id="EndDate" formControlName="endDate" required>
+    </div>
+    <div *ngIf="eventForm.hasError('dateMisMatch')">
+      <p class="error-message">End Date must be after Start Date.</p>
+    </div>
+
+    <div>
+      <label for="Location">Location:</label>
+      <input type="text" id="Location" formControlName="location" required>
+      <div *ngIf="eventForm?.get('location')?.hasError('required') && eventForm?.get('location')?.touched">
+        <p class="error-message">Location is required.</p>
+      </div>
+    </div>
+
+    <div>
+      <label for="Theme">Theme:</label>
+      <select id="Theme" formControlName="theme" required>
+        <option value="TECHNOLOGY">Technology</option>
+        <option value="SCIENCE">Science</option>
+        <option value="ART">Art</option>
+      </select>
+      <div *ngIf="eventForm?.get('theme')?.hasError('required') && eventForm?.get('theme')?.touched">
+        <p class="error-message">Theme is required.</p>
+      </div>
+    </div>
+
+    <div>
+      <label for="Places">Places:</label>
+      <select id="Places" formControlName="places" required>
+        <option value="available">Available</option>
+        <option value="full">Full</option>
+      </select>
+      <div *ngIf="eventForm?.get('places')?.hasError('required') && eventForm?.get('places')?.touched">
+        <p class="error-message">Places is required.</p>
+      </div>
+    </div>
+
+    <div>
+      <label for="Image">Image:</label>
+      <input type="file" id="image" formControlName="image" (change)="onImageSelected($event)" required>
+      <div *ngIf="eventForm?.get('image')?.hasError('required') && eventForm?.get('image')?.touched">
+        <p class="error-message">Image is required.</p>
+      </div>
+    </div>
+
+    <button type="submit" (click)="onSubmit()">Save Event</button>
+  </form>
+</div>
